@@ -24,7 +24,7 @@ INPUT_OUTPUT_DIR=$DOCS \
 INPUT_BUILD_HTML=false \
 INPUT_IMAGES_DIR=$2 \
 INPUT_IMAGE_IMPORT=$3 \
-INPUT_THEME=publish.css \
+INPUT_THEME=/publish.css \
 INPUT_EXTEND_DEFAULT_THEME=true \
 /usr/local/bin/markdown-to-pdf
 
