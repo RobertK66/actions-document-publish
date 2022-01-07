@@ -8,6 +8,8 @@ mkdir -p $DOCS && touch $DOCUMENT
 
 for file in $SOURCES; do (cat "${file}"; echo) done > $DOCUMENT
 
+echo "Hello its me!"
+
 INPUT_INPUT_DIR=$DOCS \
 INPUT_OUTPUT_DIR=$DOCS \
 INPUT_BUILD_HTML=false \
