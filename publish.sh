@@ -13,8 +13,8 @@ echo "Script called with args: '$0' '$1' '$2' '$3'"
 INPUT_INPUT_DIR=$DOCS \
 INPUT_OUTPUT_DIR=$DOCS \
 INPUT_BUILD_HTML=false \
-INPUT_IMAGES_DIR=$1 \
-INPUT_IMAGE_IMPORT=$2 \
+INPUT_IMAGES_DIR=$2 \
+INPUT_IMAGE_IMPORT=$3 \
 /usr/local/bin/markdown-to-pdf
 
 echo "::set-output name=pdf::${DOCS}/document.pdf"
