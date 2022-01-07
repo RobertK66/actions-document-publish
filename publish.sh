@@ -11,7 +11,7 @@ for file in $SOURCES; do (cat "${file}"; echo) done > $DOCUMENT
 INPUT_INPUT_DIR=$DOCS \
 INPUT_OUTPUT_DIR=$DOCS \
 INPUT_BUILD_HTML=false \
-INPUT_IMAGES_DIR=pic \
+INPUT_IMAGES_DIR=${DOCS}/../pic \
 INPUT_IMAGE_IMPORT=pic \
 /usr/local/bin/markdown-to-pdf
 
