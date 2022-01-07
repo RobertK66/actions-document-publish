@@ -5,8 +5,11 @@ inputs:
   sources:
     description: 'List of glob patterns to Markdown files in order of their inclusion in the PDF'
     required: true
-  myarg1:
-    description: 'check how to handle github action params'
+  images_dir:
+    description: 'the directory holding all referenced images.'
+    required: false
+  image_import:
+    description: 'the base path string used in the md files to reference images.'
     required: false
 outputs:
   pdf:
@@ -16,7 +19,8 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.sources }}
-    - ${{ inputs.myarg1 }}
+    - ${{ inputs.images_dir }}
+    - ${{ inputs.image_import }}
 branding:
   icon: 'file-text'
   color: 'green'
