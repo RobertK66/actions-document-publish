@@ -3,10 +3,17 @@
 SOURCES=$1
 DOCS=".publish-docs/"
 DOCUMENT="${DOCS}/document.md"
+CONTENT="${DOCS}/content.md"
+STYLE="${DOCS}/style.md"
 
-mkdir -p $DOCS && touch $DOCUMENT
+mkdir -p $DOCS && touch $DOCUMENT && touch $CONTENT && touch $STYLE
 
-for file in $SOURCES; do (cat "${file}"; echo) done > $DOCUMENT
+echo "<style>@media print {.pagebreak { page-break-before: always; break-before: always; }}</style>" >> $STYLE
+
+for file in $SOURCES; do (cat "${file}"; printf "\n<div class='pagebreak'>&nbsp;</div>\n\n") done > $CONTENT
+
+cat $STYLE >> $DOCUMENT
+cat $CONTENT >> $DOCUMENT
 
 echo "Script called with args: '$0' '$1' '$2' '$3'"
 
