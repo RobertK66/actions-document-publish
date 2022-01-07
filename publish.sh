@@ -8,7 +8,7 @@ mkdir -p $DOCS && touch $DOCUMENT
 
 for file in $SOURCES; do (cat "${file}"; echo) done > $DOCUMENT
 
-echo "Hello its me!"
+echo "Hello its me! Args: $0 $1 $2 $3"
 
 INPUT_INPUT_DIR=$DOCS \
 INPUT_OUTPUT_DIR=$DOCS \
