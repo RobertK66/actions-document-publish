@@ -1,0 +1,13 @@
+<style>
+@media print {
+  body {
+    min-width: initial;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .pagebreak {
+      page-break-before: always;
+      break-before: always; 
+  }
+}
+</style>
