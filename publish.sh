@@ -13,7 +13,7 @@ echo "Hello its me!"
 INPUT_INPUT_DIR=$DOCS \
 INPUT_OUTPUT_DIR=$DOCS \
 INPUT_BUILD_HTML=false \
-INPUT_IMAGES_DIR=$DOCS/../doc/pic \
+INPUT_IMAGES_DIR=doc/pic \
 INPUT_IMAGE_IMPORT=pic \
 /usr/local/bin/markdown-to-pdf
 
