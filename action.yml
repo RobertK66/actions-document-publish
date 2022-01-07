@@ -11,9 +11,6 @@ inputs:
   image_import:
     description: 'the base path string used in the md files to reference images.'
     required: false
-  css_ext:
-    description: 'CSS file used as extension style together with base CSS (extend_default_theme = true)'
-    required: false
 outputs:
   pdf:
     description: Published PDF Document
@@ -24,7 +21,6 @@ runs:
     - ${{ inputs.sources }}
     - ${{ inputs.images_dir }}
     - ${{ inputs.image_import }}
-    - ${{ inputs.css_ext }}
 branding:
   icon: 'file-text'
   color: 'green'
