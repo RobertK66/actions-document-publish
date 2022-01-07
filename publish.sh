@@ -4,18 +4,18 @@ echo "Script called with args: '$0' '$1' '$2' '$3' '$4'"
 SOURCES=$1
 DOCS=".publish-docs/"
 DOCUMENT="${DOCS}/document.md"
-#CONTENT="${DOCS}/content.md"
-#STYLE="${DOCS}/style.md"
 
 mkdir -p $DOCS && touch $DOCUMENT 
-#&& touch $CONTENT && touch $STYLE
 
-#echo "<style>@media print {.pagebreak { page-break-before: always; break-before: always; }}</style>" >> $STYLE
-
-for file in $SOURCES; do (cat "${file}"; printf "\n<div class='pagebreak'>&nbsp;</div>\n\n") done > $DOCUMENT
-
-#cat $STYLE >> $DOCUMENT
-#cat $CONTENT >> $DOCUMENT
+skipFirst=TRUE
+for file in $SOURCES; do 
+  if [ $skipFirst = True ] ; then
+    skipFirst=FALSE
+    (cat "${file}"; )         
+  else
+    (printf "\n<div class='pagebreak'>&nbsp;</div>\n\n"; cat "${file}"; ) 
+  fi
+done > $DOCUMENT
 
 cp /publish.css /github/workspace/publish.css
 
