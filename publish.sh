@@ -17,7 +17,7 @@ for file in $SOURCES; do (cat "${file}"; printf "\n<div class='pagebreak'>&nbsp;
 #cat $STYLE >> $DOCUMENT
 #cat $CONTENT >> $DOCUMENT
 
-copy /publish.css /github/workspace/publish.css
+cp /publish.css /github/workspace/publish.css
 
 INPUT_INPUT_DIR=$DOCS \
 INPUT_OUTPUT_DIR=$DOCS \
