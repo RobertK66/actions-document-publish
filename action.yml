@@ -5,6 +5,9 @@ inputs:
   sources:
     description: 'List of glob patterns to Markdown files in order of their inclusion in the PDF'
     required: true
+  myarg1:
+    description: 'check how to handle github action params'
+    required: false
 outputs:
   pdf:
     description: Published PDF Document
@@ -13,6 +16,7 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.sources }}
+    - ${{ inputs.myarg1 }}
 branding:
   icon: 'file-text'
   color: 'green'
